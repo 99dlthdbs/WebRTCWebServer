@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="login-form-v5:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/login_form_v5_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="login-form-v5/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="login-form-v5" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../../WSU/21년도 2학기/1216/jstl-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../WSU/21년도 2학기/0104/mariadb-java-client-2.7.4.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
