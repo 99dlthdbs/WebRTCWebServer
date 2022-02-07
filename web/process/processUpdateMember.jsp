@@ -28,8 +28,8 @@
 %>
 
 <sql:setDataSource var="dataSource"
-                   url="jdbc:mariadb://localhost:3306/bitProject"
-                   driver="org.mariadb.jdbc.Driver" user="root" password="root" />
+                   url="jdbc:mariadb://39.119.241.73:3306/web"
+                   driver="org.mariadb.jdbc.Driver" user="root" password="0309" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
     UPDATE member SET m_pw=?, m_name=?, m_gender=?, m_birth=?, m_mail=?, m_phone=?, m_address=? WHERE m_id=?

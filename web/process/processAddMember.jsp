@@ -28,8 +28,8 @@
 %>
 
 <sql:setDataSource var="dataSource"
-                   url="jdbc:mariadb://localhost:3306/bitProject"
-                   driver="org.mariadb.jdbc.Driver" user="root" password="root" />
+                   url="jdbc:mariadb://39.119.241.73:3306/web"
+                   driver="org.mariadb.jdbc.Driver" user="root" password="0309" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
     INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -49,6 +49,9 @@
     <sql:param value="<%=tts%>"/>
     <sql:param value="<%=id%>"/>
 </sql:update>
+<%
+    session.setAttribute("sessionId", id);
+%>
 
 <c:if test="${resultSet>=1}">
     <c:redirect url="../JSP/main.jsp?msg=1" />

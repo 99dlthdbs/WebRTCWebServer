@@ -6,8 +6,8 @@
   String sessionId = (String) session.getAttribute("sessionId");
 %>
 <sql:setDataSource var="dataSource"
-                   url="jdbc:mariadb://localhost:3306/bitProject"
-                   driver="org.mariadb.jdbc.Driver" user="root" password="root"/>
+                   url="jdbc:mariadb://39.119.241.73:3306/web"
+                   driver="org.mariadb.jdbc.Driver" user="root" password="0309"/>
 
 <sql:update dataSource="${dataSource}" var="resultSet">
   DELETE FROM func WHERE member_m_id = ?

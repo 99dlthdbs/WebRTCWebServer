@@ -15,8 +15,8 @@
 %>
 
 <sql:setDataSource var="dataSource"
-                   url="jdbc:mariadb://localhost:3306/bitProject"
-                   driver="org.mariadb.jdbc.Driver" user="root" password="root" />
+                   url="jdbc:mariadb://39.119.241.73:3306/web"
+                   driver="org.mariadb.jdbc.Driver" user="root" password="0309" />
 
 <sql:query dataSource="${dataSource}" var="resultSet">
     SELECT * FROM MEMBER WHERE m_id=? and m_pw=?

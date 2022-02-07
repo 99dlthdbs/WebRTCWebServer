@@ -1,6 +1,7 @@
 CREATE database bitProject;
 
 use bitProject;
+use web;
 
 CREATE TABLE IF NOT EXISTS member
 (
@@ -21,7 +22,9 @@ from member;
 select *
 from func;
 
-drop table member;
+drop database bitProject;
+delete from func where member_m_id = 'heesun';
+delete from member where m_id = 'heesun';
 
 
 CREATE TABLE IF NOT EXISTS func

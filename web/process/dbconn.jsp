@@ -3,9 +3,9 @@
     Connection conn = null;
 
     try {
-        String url = "jdbc:mariadb://localhost:3306/bitProject";
+        String url = "jdbc:mariadb://39.119.241.73:3306/web";
         String user = "root";
-        String password = "root";
+        String password = "0309";
 
         Class.forName("org.mariadb.jdbc.Driver");
         conn = DriverManager.getConnection(url, user, password);

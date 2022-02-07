@@ -36,7 +36,7 @@
 <body id="page-top">
 <div id="wrapper">
     <!-- Sidebar -->
-   <%@include file="sideBar.jsp"%>
+    <%@include file="sideBar.jsp"%>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
