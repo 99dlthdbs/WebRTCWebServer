@@ -5,6 +5,8 @@
       <map>
         <entry key="file://$PROJECT_DIR$/web/JSP/Login.jsp" value="file://$PROJECT_DIR$/web/JSP" />
         <entry key="file://$PROJECT_DIR$/web/JSP/Soyoon.jsp" value="file://$PROJECT_DIR$/web/JSP" />
+        <entry key="file://$PROJECT_DIR$/web/JSP/main.jsp" value="file://$PROJECT_DIR$/web/JSP" />
+        <entry key="file://$PROJECT_DIR$/web/JSP/updateMember.jsp" value="file://$PROJECT_DIR$/web/JSP" />
         <entry key="file://$PROJECT_DIR$/web/test/facebook01.jsp" value="file://$PROJECT_DIR$/web/test" />
       </map>
     </option>

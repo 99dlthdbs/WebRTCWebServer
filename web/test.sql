@@ -23,6 +23,7 @@ from func;
 
 drop table member;
 
+
 CREATE TABLE IF NOT EXISTS func
 (
     f_stt       BOOLEAN,
