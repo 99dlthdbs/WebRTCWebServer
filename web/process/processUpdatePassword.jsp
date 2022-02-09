@@ -13,7 +13,7 @@
 %>
 
 <sql:setDataSource var="dataSource"
-                   url="jdbc:mariadb://39.119.241.73:3306/web"
+                   url = "jdbc:mariadb://121.184.11.237:3306/web"
                    driver="org.mariadb.jdbc.Driver" user="root" password="0309" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">

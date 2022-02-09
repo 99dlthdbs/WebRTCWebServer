@@ -7,7 +7,7 @@
     <%
         request.setCharacterEncoding("utf-8");
     %>
-    <title>비밀번호 변경</title>
+    <title>컨시더(Consider) - 비밀번호 변경</title>
 </head>
 <script type="text/javascript">
     function checkForm() {

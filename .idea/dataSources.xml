@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:mariadb://39.119.241.73:3306/web</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="성민님집에서 희선님" uuid="316074dc-8c42-454a-92f3-126ea111289b">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://121.184.11.237:3306/web</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

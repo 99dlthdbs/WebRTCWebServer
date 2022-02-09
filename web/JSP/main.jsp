@@ -167,7 +167,7 @@
                         <div class="card h-100 py-2">
                             <div class="text-center text-lg p-4 text-xl text-monospace">
                                 <h3>청각장애인 125명 중 28명은<br>
-                                    화상회의를 사용하면서 자막이 효과적으로 보여집니다.
+                                    화상회의를 사용하면서 자막이 가장 도움이 되었다고 합니다.
                                 </h3>
                                 <br>
                                 <!-- Pie Chart -->
@@ -191,6 +191,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <a href="https://cms.dankook.ac.kr/web/dkseri/-15?p_p_id=Bbs_WAR_bbsportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_count=1&_Bbs_WAR_bbsportlet_extFileId=130783">
+                                출처 : COVID-19 상황에서 통합학급 청각장애 학생의<br>
+                                온라인 수업 실태와 요구도 조사
+                            </a>
                         </div>
                     </div>
                 </div>

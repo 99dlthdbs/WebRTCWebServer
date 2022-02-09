@@ -33,6 +33,8 @@
         String mail2 = null;
         String phone = null;
         String address = null;
+        String stt = null;
+        String tts = null;
     %>
     <%
         ResultSet rs = null;
@@ -61,7 +63,7 @@
                 phone = rs.getString("m_phone");
                 address = rs.getString("m_address");
     %>
-    <title>회원 수정</title>
+    <title>컨시더(Consider) - 회원 수정</title>
 </head>
 <body onload="init()">
 <div class="jumbotron">
@@ -116,14 +118,9 @@
             <label class="col-sm-2">성별</label>
             <div class="col-sm-10">
                 <input id="male" name="gender" type="radio" value="<%=1%>"
-                <c:if test="${gender.equals('남')}">
-                    <c:out value="checked"/>
-                </c:if>
                 > 남
                 <input id="female" name="gender" type="radio" value="<%=0%>"
-                <c:if test="${gender.equals('여')}">
-                    <c:out value="checked"/>
-                </c:if> >여
+                >여
             </div>
         </div>
         <div class="form-group row">
@@ -175,21 +172,22 @@
                        value="<%=address%>">
             </div>
         </div>
-        <%
-            }
-            String sql2 = "select * from func where member_m_id = ?";
-            pstmt = conn.prepareStatement(sql2);
-            pstmt.setString(1, sessionId);
-
-            while (rs.next()) {
-                String stt = rs.getString("f_stt");
-                String tts = rs.getString("f_tts");
-        %>
         <div class="form-group  row">
             <label class="col-sm-2">기능 사용</label>
             <div class="col-sm-10">
-                <input name="stt" type="checkbox" value="true"/> STT(Speech to Text)
-                <input name="tts" type="checkbox" value="true"/> TTS(Text to Speech)
+                <%
+                    }
+                    sql = "select * from func where member_m_id = ?";
+                    pstmt = conn.prepareStatement(sql);
+                    pstmt.setString(1, sessionId);
+                    rs = pstmt.executeQuery();
+
+                    while (rs.next()) {
+                        stt = rs.getString("f_stt");
+                        tts = rs.getString("f_tts");
+                %>
+                <input id="stt" name="stt" type="checkbox" value="true"/> STT(Speech to Text)
+                <input id="tts" name="tts" type="checkbox" value="true"/> TTS(Text to Speech)
             </div>
         </div>
         <div class="form-group  row">
@@ -222,7 +220,19 @@
         setComboMailValue("<%=mail2%>");
         setComboBirthValue("<%=birthmm%>");
         setCheckGenderValue("<%=gender%>");
+        setCheckSttValue("<%=stt%>");
+        setCheckTtsValue("<%=tts%>");
         // $('#male').prop('checked', true);
+    }
+
+    function setCheckSttValue(val){
+        if(val == "1")
+            $('#stt').prop('checked', true);
+    }
+
+    function setCheckTtsValue(val){
+        if(val == "1")
+            $('#tts').prop('checked', true);
     }
 
     function setComboMailValue(val) {
@@ -236,7 +246,6 @@
     }
 
     function setCheckGenderValue(val){
-        alert(val);
         if(val == "1")
             $('#male').prop('checked', true);
         else if(val == "0")
