@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/web/JSP/updateMember.jsp" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/web/JSP/updatePassword_2.jsp" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/web/process/processAttendMeeting.jsp" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/web/test.sql" dialect="MariaDB" />
   </component>
 </project>
