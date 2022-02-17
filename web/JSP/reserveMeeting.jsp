@@ -31,6 +31,7 @@
         function makeRoom() {
             // 랜덤 값 생성
             document.getElementById("conn1").value = rand(1, 99999999);
+            document.getElementById("g_id").value = rand(1, 99999999);
 
             // button 비활성화
             const btn = document.getElementById("createbtn");
@@ -54,8 +55,8 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Start Meeting</h1>
-                <p class="mb-4">회의를 시작하세요!</p>
+                <h1 class="h3 mb-2 text-gray-800">Reserve Meeting</h1>
+                <p class="mb-4">회의를 예약하세요!</p>
 
                 <!-- Page Meeting Input -->
                 <div class="col-lg-12 bg-white border-left-info rounded-sm row my-4 ml-1 shadow">
@@ -72,7 +73,7 @@
                                 2. 회의 중 마이크 사용이 어려운 경우, TTS 기능으로 음성을 전달할수 있습니다.<br>
                                 3. 말하는 것을 STT 모두 저장되어 있습니다.</p>
                             <!-- 회의 생성 -->
-                            <form action="../process/processCreateMeeting.jsp" method="get" class="user p-3">
+                            <form action="../process/processReserveMeeting.jsp" method="get" class="user p-3">
                                 <div class="form-group mx-3 my-3">
                                     <label class="text-lg mr-3" for="conn1">회의 ID</label>
                                     <input class="form-control form-control-user" type="text" id="conn1" name="conn1" placeholder="Conference ID">
@@ -83,12 +84,20 @@
                                 <div class="form-group mx-3 mt-4">
                                     <label class="text-lg mr-3" for="conn1Pw">회의 비밀번호</label>
                                     <input type="password" class="form-control form-control-user"
-                                           id="conn1Pw" placeholder="Password">
+                                           id="conn1Pw" name="conn1Pw" placeholder="Password">
+                                </div>
+                                <div class="form-group mx-3 mt-4">
+                                    <label class="text-lg mr-3" for="conn1Pw">회의 시간</label>
+                                    <input type="datetime-local" class="form-control form-control-user"
+                                           id="connStartDate" name="connStartDate" >
+                                    <input type="datetime-local" class="form-control form-control-user mt-4"
+                                           id="connEndDate" name="connEndDate">
+                                    <input type="hidden" name="g_id" id="g_id">
                                 </div>
                                 <button type="submit"
                                         class="btn btn-info btn-user btn-block rounded-pill mt-2 mx-4 btn-lg"
                                         style="width: 32rem; height: 3rem;">
-                                    Start Meeting !
+                                    Reserve Meeting !
                                 </button>
                             </form>
 

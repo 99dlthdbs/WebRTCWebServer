@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: heesun
-  Date: 2022-01-11
-  Time: 오전 4:58
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -30,36 +24,14 @@
     <!-- Custom styles for this page -->
     <link href="../rss/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
-    <%
-        String sessionId = (String) session.getAttribute("sessionId");
-    %>
-    <script>
+<%
+    String sessionId = (String) session.getAttribute("sessionId");
+    String roomId = request.getParameter("roomId");
 
-        document.addEventListener('DOMContentLoaded', function () {
-            var calendarEl = document.getElementById('calendar');
-
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                timeZone: 'UTC',
-                initialView: 'dayGridMonth',
-                aspectRatio: 1.8,
-                headerToolbar: {
-                    right: 'today,prev,next',
-                    center: 'title',
-                    left: 'timeGridWeek,dayGridMonth'
-                },
-                events: [
-                    { id: '1', start: '2022-01-18T12:00:00', end: '2022-01-18T14:00:00', title: '회의 1' },
-                    { id: '2', start: '2022-01-18T18:00:00', end: '2022-01-18T19:00:00', title: '회의 2' },
-                    { id: '3', start: '2022-01-19T18:00:00', end: '2022-01-19T19:00:00', title: '회의 3' },
-                    { id: '4', resourceId: 'e', start: '2018-02-07T03:00:00', end: '2018-02-07T08:00:00', title: 'event 4' },
-                    { id: '5', resourceId: 'f', start: '2018-02-07T00:30:00', end: '2018-02-07T02:30:00', title: 'event 5' }
-                ]
-            });
-
-            calendar.render();
-        });
-
-    </script>
+    String startDatetime = request.getParameter("startDate");
+    String endDatetime = request.getParameter("endDate");
+    String reserve = request.getParameter("reserve");
+%>
 </head>
 <body id="page-top">
 
@@ -67,7 +39,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <%@include file="sideBar.jsp"%>
+    <%@include file="sideBar.jsp" %>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -75,7 +47,7 @@
 
         <!-- Main Content -->
         <div id="content">
-           <%@include file="topBar.jsp"%>
+            <%@include file="topBar.jsp" %>
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
@@ -85,7 +57,7 @@
                 <!-- Page Calendar -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <a class="nav-link-p m-0 font-weight-bold text-primary text-right ">회의 예약하기</a>
+                        <a href="reserveMeeting.jsp" class="nav-link-p m-0 font-weight-bold text-primary text-right ">회의 예약하기</a>
                     </div>
                     <div class="card-body">
                         <div id='calendar'></div>
@@ -96,7 +68,7 @@
             <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->
-        <%@ include file="footer.jsp"%>
+        <%@ include file="footer.jsp" %>
     </div>
     <!-- End of Content Wrapper -->
 </div>
@@ -108,7 +80,7 @@
 </a>
 
 <!-- Logout Modal-->
-<%@ include file="logoutModal.jsp"%>
+<%@ include file="logoutModal.jsp" %>
 
 <!-- Bootstrap core JavaScript-->
 <script src="../rss/vendor/jquery/jquery.min.js"></script>
@@ -128,4 +100,55 @@
 <script src="../process/js/demo/datatables-demo.js"></script>
 
 </body>
+<script>
+    var myCalendar;
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        myCalendar = new FullCalendar.Calendar(calendarEl, {
+            timeZone: 'UTC',
+            initialView: 'dayGridMonth',
+            aspectRatio: 1.8,
+            headerToolbar: {
+                right: 'today,prev,next',
+                center: 'title',
+                left: 'timeGridWeek,dayGridMonth'
+            },
+            events: [
+                {id: '1', start: '2022-01-18T12:00:00', end: '2022-01-18T14:00:00', title: '회의 1'},
+                {id: '2', start: '2022-01-18T18:00:00', end: '2022-01-18T19:00:00', title: '회의 2'},
+                {id: '3', start: '2022-01-19T18:00:00', end: '2022-01-19T19:00:00', title: '회의 3'},
+                {
+                    id: '4',
+                    resourceId: 'e',
+                    start: '2018-02-07T03:00:00',
+                    end: '2018-02-07T08:00:00',
+                    title: 'event 4'
+                },
+                {
+                    id: '5',
+                    resourceId: 'f',
+                    start: '2018-02-07T00:30:00',
+                    end: '2018-02-07T02:30:00',
+                    title: 'event 5'
+                }
+            ]
+        });
+        myCalendar.render();
+    });
+</script>
+<%
+    if (reserve != null) {
+        if(reserve.equals("1")){
+%>
+<script>
+    alert("회의 예약을 성공했습니다.");
+    window.onload = function (){
+        myCalendar.addEvent( {"title":"event <%=roomId%>", "start":"<%=startDatetime%>", "end":"<%=endDatetime%>"});
+    }
+</script>
+<%
+        }
+    }
+%>
 </html>

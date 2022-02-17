@@ -1,11 +1,11 @@
 <%@ page import="java.sql.*" %>
-<%@ page contentType="text/html; charset=utf-8" %>
 <%
     Connection conn = null;
 
     try {
         String url = "jdbc:mariadb://39.119.241.73:3306/web";
 //        String url = "jdbc:mariadb://121.184.11.237:3306/web";
+//        String url = "jdbc:mariadb://localhost:3306/bitProject";
 
         String user = "root";
         String password = "0309";

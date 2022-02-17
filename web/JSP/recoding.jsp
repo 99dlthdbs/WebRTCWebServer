@@ -36,8 +36,8 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Attend a meeting</h1>
-                <p class="mb-4">회의에 참여하세요!</p>
+                <h1 class="h3 mb-2 text-gray-800">Recoding Video</h1>
+                <p class="mb-4">회의 영상을 확인하세요!</p>
 
                 <!-- Page Content -->
                 <div class="card shadow mb-4">

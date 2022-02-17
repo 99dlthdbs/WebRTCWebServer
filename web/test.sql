@@ -4,9 +4,16 @@ use bitProject;
 use web;
 
 select *
-from member;
+from reserve;
 select *
 from func;
+drop table func;
+drop table videos;
+drop table reserve;
+drop table files;
+drop table conference;
+drop table chatgroup;
+drop table member;
 
 delete from func where member_m_id = 'heesun';
 delete from member where m_id = 'heesun';
@@ -77,12 +84,14 @@ CREATE TABLE IF NOT EXISTS conference
     FOREIGN KEY (c_hostId) REFERENCES member (m_id) ON UPDATE CASCADE ON DELETE RESTRICT
 )default CHARSET = utf8;
 
+
 CREATE TABLE IF NOT EXISTS reserve
 (
-    r_id        VARCHAR(20),
-    g_id        VARCHAR(20),
-    r_date      timestamp,
-    c_pw        VARCHAR(20),
+    r_id            VARCHAR(20),
+    g_id            VARCHAR(20),
+    r_startDate     VARCHAR(20),
+    r_endDate       VARCHAR(20),
+    c_pw            VARCHAR(20),
     PRIMARY KEY (r_id),
     FOREIGN KEY (g_id) REFERENCES chatGroup (g_id) ON UPDATE CASCADE ON DELETE RESTRICT
 )default CHARSET = utf8;

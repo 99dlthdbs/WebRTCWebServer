@@ -19,6 +19,7 @@
     String mail = mail1 + "@" + mail2;
     String phone = request.getParameter("phone");
     String address = request.getParameter("address");
+    String g_idList = "";
     Boolean stt = Boolean.valueOf(request.getParameter("stt"));
     Boolean tts = Boolean.valueOf(request.getParameter("tts"));
 
@@ -28,12 +29,13 @@
 %>
 
 <sql:setDataSource var="dataSource"
-                   url = "jdbc:mariadb://121.184.11.237:3306/web"
+                   url = "jdbc:mariadb://39.119.241.73:3306/web"
                    driver="org.mariadb.jdbc.Driver" user="root" password="0309" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
-    INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     <sql:param value="<%=id%>" />
+    <sql:param value="<%=g_idList%>"/>
     <sql:param value="<%=password%>" />
     <sql:param value="<%=name%>" />
     <sql:param value="<%=gender%>" />

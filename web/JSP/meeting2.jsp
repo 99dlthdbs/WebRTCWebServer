@@ -64,7 +64,6 @@
                                 <div class="form-group mx-3 my-3">
                                     <label class="text-lg mr-3" for="conn1">회의 ID</label>
                                     <input class="form-control form-control-user" type="text" id="conn1" name="conn1" placeholder="Conference ID">
-                                    <input type="hidden" id="msg" name="msg" value="1">
                                 </div>
                                 <div class="form-group mx-3 mt-4">
                                     <label class="text-lg mr-3" for="conn1Pw">회의 비밀번호</label>
